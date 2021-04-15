@@ -29,15 +29,19 @@ function App() {
 
   function addTodo(e) {
     e.preventDefault();
-
-    db.collection("todos").add({
-      inprogress: true,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      todo: todoInput
-    });
-
-    setTodoInput("");
-  }
+    if (todoInput === "" || todoInput.trim().length === 0)
+    {
+      return
+    }
+    else
+    {
+      db.collection("todos").add({
+        inprogress: true,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        todo: todoInput,
+      });
+      setTodoInput("");
+    }
 
   return (
     <div className="App">
