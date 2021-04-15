@@ -43,6 +43,8 @@ function App() {
       setTodoInput("");
     }
 
+  }
+  
   return (
     <div className="App">
       <div
