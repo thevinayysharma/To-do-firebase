@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
     if (todoInput === "" || todoInput.trim().length === 0)
     {
-      return
+     
     }
     else
     {
